@@ -80,14 +80,39 @@ For this experiment the Data Source will be [Amazon S3](https://aws.amazon.com/s
 
 * Ensure that you have a working [Amazon SageMaker Studio](https://aws.amazon.com/sagemaker/studio/) environment and that it has been updated.
 
+* Follow the steps below to download the dataset.
+    * Start with the `explore-dataset.ipynb` SageMaker Studio notebook.
+        * Explore the dataset locally by running the cells in the notebook.
+        * Upload the datasets (CSV files) to an S3 location for consumption by SageMaker Data Wrangler later.
+        * Copy the S3 URLs of the tracks and ratings data files to your clipboard. We will use these URLs later to import these part files into Data Wrangler and join them.
+    * Let's run though each of the steps above.
 
+* Double click on the file called explore-data.ipynb. Amazon SageMaker may prompt you to select a kernel and image. If it does select Data Science as the image and Python 3 as the Kernel, as shown here:
+![image](./img/dl-image-3.png)
+
+* You have now successfully downloaded the data and opened a notebook, we will now upload the data to your S3 bucket. Note: An Amazon S3 bucket was created for you when the Amazon SageMaker Studio environment was started.
+![image](./img/dl-image-4.png)
+
+* From the menu select **Run / Run All Cells** to execute all the cells in the notebook.
+![image](./img/dl-image-5.png)
+
+* Examine the results, as you can see the samples of the data are printed to the screen.
+![image](./img/dl-image-6.png)
+
+* The data structure is defined in the next section. However, before we continue, note the path to the various datasets. Your paths will be different to the ones in the image below. Please copy these paths as you will use them later. An example of a path is s3://sagemaker-eu-west-1-112233445566/music-recommendation-demo/input/tracks.csv
+![image](./img/dl-image-7.png)
+
+<div class="alert alert-block alert-info">
+   <b>Note</b>
+
+   Please also check the S3 location to make sure the files are uploaded successfully before moving to the next section.
+
+</div>
 
 ### Exploring Data
-Before applying various data transformations, we need to explore the data to find correlation and target leakage. Please refer to **[Exploratory Data Analysis](/Data-Exploration.md)** and follow steps on Data exploration. 
+Before applying various data transformations, we need to explore the data to find correlation and target leakage. Please refer to **[Exploratory Data Analysis](/Data-Exploration.md)** and follow steps on Data exploration.
 
- 
- 
- ### Data Transformation 
+### Data Transformation 
 Based on the Data explorations carried out in previous step, we are now ready to apply transformations to the data. 
 Amazon SageMaker Data Wrangler provides numerous ML data transforms to streamline cleaning, transforming, and featurizing your data. When you add a transform, it adds a step to the data flow. Each transform you add modifies your dataset and produces a new dataframe. All subsequent transforms apply to the resulting dataframe.
 
@@ -168,3 +193,12 @@ Handle categorical data
 `is_canceled` = 0 (negative case)
 `is_canceled` = 1 (positive case)
 ![random-oversample](.././img/random-oversample.png)
+
+
+The ratio of positive to negative case around 0.38
+
+![quick-model-post](.././img/class-before-smote.png)
+
+Balance using under/over sampling or SMOTE 
+After balancing, the ratio is 1 
+![quick-model-post](.././img/class-after-smote.png)
