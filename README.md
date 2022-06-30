@@ -83,4 +83,4 @@ For this experiment the Data Source will be [Amazon S3](https://aws.amazon.com/s
 
 
 ### Exploring Data
-Before applying various data transformations, we need to explore the data to find correlation and target leakage. Please refer to **[Exploratory Data Analysis](/data-exploration.md)** and follow steps on Data exploration. 
+Before applying various data transformations, we need to explore the data to find correlation and target leakage. Please refer to **[Exploratory Data Analysis](/Data-Exploration.md)** and follow steps on Data exploration. 
