@@ -11,16 +11,14 @@ Amazon SageMaker helps data scientists and developers to prepare, build, train, 
 <div class="alert alert-block alert-info">
 <b>Dataset</b>
 
-We will be using the Hotel Booking Demand Dataset that is publically available here - 
+We will be using the [Hotel Booking Demand dataset](https://www.kaggle.com/jessemostipak/hotel-booking-demand) that is publically available. - This data set contains booking information for a city hotel and a resort hotel, and includes information such as when the booking was made, length of stay, the number of adults, children, and/or babies, and the number of available parking spaces, among other things. <br> <br>
 
-[Hotel Booking Demand dataset](https://www.kaggle.com/jessemostipak/hotel-booking-demand) - This data set contains booking information for a city hotel and a resort hotel, and includes information such as when the booking was made, length of stay, the number of adults, children, and/or babies, and the number of available parking spaces, among other things. <br> <br>
-
-The data needs to be downloaded from the locations specified, and uploaded to S3 bucket before we start the Data Preprocessing phase. Please follow the steps outlined in later sections, to download the data.   
+The data needs to be downloaded from the locations specified, and uploaded to S3 bucket before we start the Data Preprocessing phase. Please follow the Experiment Steps  outlined in later sections, to download the data and notebooks.   
 
 
-## Column Description 
+## Description of the Columns 
 
-**Description of the columns**
+
 
 | Column Name  | Description  | 
 |---|---|
@@ -79,3 +77,11 @@ For this experiment the Data Source will be [Amazon S3](https://aws.amazon.com/s
 ## Experiment steps
 
 ### Downloading the dataset, and notebooks 
+
+* Ensure that you have a working [Amazon SageMaker Studio](https://aws.amazon.com/sagemaker/studio/) environment and that it has been updated.
+
+
+
+### Exploring Data
+Before applying various data transformations, we need to explore the data to find correlation and target leakage. 
+**[Exploratory Data Analysis](/data-exploration.md)** 
