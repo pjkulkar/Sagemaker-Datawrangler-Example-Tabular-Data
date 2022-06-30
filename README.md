@@ -11,7 +11,7 @@ Amazon SageMaker helps data scientists and developers to prepare, build, train, 
 <div class="alert alert-block alert-info">
 <b>Dataset</b>
 
-We will be using the [Hotel Booking Demand dataset](https://www.kaggle.com/jessemostipak/hotel-booking-demand) that is publically available. - This data set contains booking information for a city hotel and a resort hotel, and includes information such as when the booking was made, length of stay, the number of adults, children, and/or babies, and the number of available parking spaces, among other things. <br> <br>
+We will be using the [Hotel Booking Demand dataset](https://www.kaggle.com/jessemostipak/hotel-booking-demand) that is publically available. This data set contains booking information for a city hotel and a resort hotel, and includes information such as when the booking was made, length of stay, the number of adults, children, and/or babies, and the number of available parking spaces, among other things. <br> <br>
 
 The data needs to be downloaded from the locations specified, and uploaded to S3 bucket before we start the Data Preprocessing phase. Please follow the Experiment Steps  outlined in later sections, to download the data and notebooks.   
 
@@ -83,5 +83,4 @@ For this experiment the Data Source will be [Amazon S3](https://aws.amazon.com/s
 
 
 ### Exploring Data
-Before applying various data transformations, we need to explore the data to find correlation and target leakage. 
-**[Exploratory Data Analysis](/data-exploration.md)** 
+Before applying various data transformations, we need to explore the data to find correlation and target leakage. Please refer to **[Exploratory Data Analysis](/data-exploration.md)** and follow steps on Data exploration. 
