@@ -84,3 +84,87 @@ For this experiment the Data Source will be [Amazon S3](https://aws.amazon.com/s
 
 ### Exploring Data
 Before applying various data transformations, we need to explore the data to find correlation and target leakage. Please refer to **[Exploratory Data Analysis](/Data-Exploration.md)** and follow steps on Data exploration. 
+
+ 
+ 
+ ### Data Transformation 
+Based on the Data explorations carried out in previous step, we are now ready to apply transformations to the data. 
+Amazon SageMaker Data Wrangler provides numerous ML data transforms to streamline cleaning, transforming, and featurizing your data. When you add a transform, it adds a step to the data flow. Each transform you add modifies your dataset and produces a new dataframe. All subsequent transforms apply to the resulting dataframe.
+
+Data Wrangler includes built-in transforms, which you can use to transform columns without any code. You can also add custom transformations using PySpark, Pandas, and PySpark SQL. Some transforms operate in place, while others create a new output column in your dataset.
+
+### Drop Columns 
+ drop columns based on the analyses we performed in the previous section. 
+
+ 
+ based on target leakage
+ 
+ drop `reservation_status`
+ 
+ drop 7 columns that are redundant - `days_in_waiting_list`, `hotel`, `reserved_room_type`, `arrival_date_month`, `reservation_status_date`, `babies` and `arrival_date_day_of_month`
+ 
+ 
+ 
+ based on linear correlation results 
+ 
+ `arrival_date_week_number`
+ `arrival_date_year` is greater than the recommended threshold of `0.90`
+ 
+ 
+ based on non-linear correlation results
+ we need to drop `reservation_status`
+ 
+ ![drop-columns](/img/drop-columns.png)
+ 
+we had already dropped it since it was also a target leakage 
+
+
+based on multi-colinearity results 
+
+VIF > 5
+drop columns `adults`, `agents`
+
+ ![drop-more-columns](/img/drop-more-columns.png)
+
+### Drop duplicate columns 
+ ![drop-duplicates](.././img/drop-duplicates.png)
+ ![duplicate-1](.././img/duplicate-1.png)
+ 
+ 
+### handle outliers 
+ ![duplicate-1](.././img/outliers.png)
+
+
+### Handle missing values 
+
+children replace with 0 based on value counts 
+![fill-missing-children](.././img/fill-missing-children.png)
+ 
+ 
+Fill missing country column with `PRT` based on value counts 
+![fill-missing-country](.././img/fill-missing-country.png)
+
+
+Custom Transform - Meal type has Undefined category, changing the Undefined value to the most used which is BB by implementing a custom pyspark transform with two simple lines of code
+ ![custom-pyspark](.././img/custom-pyspark.png)
+```python
+from pyspark.sql.functions import when
+
+df = df.withColumn('meal', when(df.meal == 'Undefined', 'BB').otherwise(df.meal))
+```
+
+Standardize numeric outliers 
+ ![scale-numeric](.././img/scale-numeric.png)
+
+`lead_time`, `stays_weekend_nights`, `stays_weekend_nights`, `is_repeated_guest`, `prev_cancellations`, `prev_bookings_not_canceled`, `booking_changes`, `adr`, `total_of_specical_requests`, `required_car_parking_spaces`
+
+
+Handle categorical data
+ ![scale-categorical](.././img/scale-categorical.png)
+`meal`, `is_repeated_guest`, `market_segment`, `assigned_room_type`, `deposit_type`, `customer_type`
+
+### Balancing the target variable 
+
+`is_canceled` = 0 (negative case)
+`is_canceled` = 1 (positive case)
+![random-oversample](.././img/random-oversample.png)
