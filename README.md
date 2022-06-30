@@ -118,25 +118,24 @@ Amazon SageMaker Data Wrangler provides numerous ML data transforms to streamlin
 
 Data Wrangler includes built-in transforms, which you can use to transform columns without any code. You can also add custom transformations using PySpark, Pandas, and PySpark SQL. Some transforms operate in place, while others create a new output column in your dataset.
 
-### Drop Columns 
- drop columns based on the analyses we performed in the previous section. 
+## Drop Columns 
+ Now we will drop columns based on the analyses we performed in the previous section. 
 
- 
- based on target leakage
- 
- drop `reservation_status`
- 
+-  based on target leakage
+   drop `reservation_status`
+
+- redundant columns
  drop 7 columns that are redundant - `days_in_waiting_list`, `hotel`, `reserved_room_type`, `arrival_date_month`, `reservation_status_date`, `babies` and `arrival_date_day_of_month`
  
  
  
- based on linear correlation results 
+- based on linear correlation results 
  
  `arrival_date_week_number`
  `arrival_date_year` is greater than the recommended threshold of `0.90`
  
  
- based on non-linear correlation results
+- based on non-linear correlation results
  we need to drop `reservation_status`
  
  ![drop-columns](/img/drop-columns.png)
