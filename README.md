@@ -76,45 +76,19 @@ For this experiment the Data Source will be [Amazon S3](https://aws.amazon.com/s
 
 ## Experiment steps
 
-### Downloading the dataset, and notebooks 
+### Downloading the dataset 
 
 * Ensure that you have a working [Amazon SageMaker Studio](https://aws.amazon.com/sagemaker/studio/) environment and that it has been updated.
 
 * Follow the steps below to download the dataset.
     - 1. Download the [Hotel Booking Demand dataset](https://www.kaggle.com/jessemostipak/hotel-booking-demand) from the specified location. 
     - 2. Create a private S3 bucket to upload the dataset in. You can reference the instructions for bucket creaiton [here] https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html
-    - 3.  Upload the data in step 1 to the bucket created in step 2. This data will be used as input to the Datawrangler during the data preprocessing.
-   Please check the S3 location to make sure the files are uploaded successfully before moving to the next section.
-
-### Importing datasets from a data source (S3) to Data Wrangler
-
-* Initialize SageMaker Data Wrangler via SageMaker Studio UI.
-    * There are three ways that you can do this, either from the Launcher screen as depicted here:
-    ![image](./img/image-1.png)
-    * Or from the SageMaker resources menu on the left, selecting Data Wrangler, and new flow
-    ![image](./img/image-1-1.png)
-    ![image](./img/image-1-2.png)
-    * You can also use the File -> New -> DataWrangler option as shown here
-    ![image](./img/image-1-3.png)
-* It takes a few minutes to load.
-![image](./img/image-2.png)
-* Once Data Wrangler is loaded, you should be able to see it under running instances and apps as shown below.
-![image](./img/image-3.png)
-* Once Data Wrangler is up and running, you can see the following data flow interface with options for import, creating data flows and export as shown below.
-![image](./img/image-4.png)
-* Make sure to rename the untitled.flow to your preference (for e.g., join.flow)
-* Paste the S3 URL for the tracks.csv file into the search box below and hit go.
-![image](./img/image-5.png)
-* Select the CSV file from the drop down results. On the right pane, make sure COMMA is chosen as the delimiter and Sampling is *None*. Hit *import* to import this dataset to Data Wrangler.
-![image](./img/image-6.png)
-* Once the dataset is imported, the Data flow interface looks as shown below.
-![image](./img/image-7.png)
-* Since currently you are in the data flow tab, hit the import tab (left of data flow tab) as seen in the above image.
-* Import the second part file (ratings.csv) following the same set of instructions as noted previously.
-![image](./img/image-8.png)
+    - 3.  Upload the data in step 1 to the bucket created in step 2. Steps to upload the data can be found [here] https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html
+    This data will be used as input to the Datawrangler during the data preprocessing. Please check the S3 location to make sure the files are uploaded successfully before moving to the next section.
 
 
-
+## Importing datasets from a data source (S3) to Data Wrangler
+Before applying various data transformations, we need to explore the data to find correlation and target leakage. Please refer to **[Exploratory Data Analysis](/Data-Import.md)** and follow steps for importing the data.
 
 ### Exploring Data
 Before applying various data transformations, we need to explore the data to find correlation and target leakage. Please refer to **[Exploratory Data Analysis](/Data-Exploration.md)** and follow steps on Data exploration.
