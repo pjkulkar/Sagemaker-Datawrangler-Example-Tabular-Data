@@ -95,7 +95,7 @@ For this experiment the Data Source will be [Amazon S3](https://aws.amazon.com/s
     ![image](./img/image-1-1.png)
     ![image](./img/image-1-2.png)
     * You can also use the File -> New -> DataWrangler option as shown here
-    ![image](./img/image-1-4.png)
+    ![image](./img/image-1-3.png)
 * It takes a few minutes to load.
 ![image](./img/image-2.png)
 * Once Data Wrangler is loaded, you should be able to see it under running instances and apps as shown below.
