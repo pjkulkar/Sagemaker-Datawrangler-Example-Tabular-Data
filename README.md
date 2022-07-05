@@ -137,17 +137,17 @@ We can do the following to handle missing values in our feature columns using Da
 
  - Missing values in **Children** column : Majority of the visitors were not accompanied by children and hence missing data can be replaced by number of children = 0.
  
-![fill-missing-children](.././img/fill-missing-children.png)
+![fill-missing-children](/img/fill-missing-children.png)
  
 - Missing values in **Country** column 
 Iterating through the country column reveals that most of the clients are from Europe. Therefore, all the missing values in the country column are replaced with the country of maximum occurrence - Portugal (PRT). Fill missing country column with `PRT` based on value counts 
  
-![fill-missing-country](.././img/fill-missing-country.png)
+![fill-missing-country](./img/fill-missing-country.png)
 
 
 - Custom Transform - Meal type has Undefined category, changing the Undefined value to the most used which is BB by implementing a custom pyspark transform with two simple lines of code
  
- ![custom-pyspark](.././img/custom-pyspark.png)
+ ![custom-pyspark](./img/custom-pyspark.png)
 ```python
 from pyspark.sql.functions import when
 
@@ -156,7 +156,7 @@ df = df.withColumn('meal', when(df.meal == 'Undefined', 'BB').otherwise(df.meal)
 
  #### Numeric Normalization 
 Standardize numeric outliers 
- ![scale-numeric](.././img/scale-numeric.png)
+ ![scale-numeric](./img/scale-numeric.png)
 
 From Data Wrangler's list of pre-built transforms, choose **Process numeric** and apply the **min-max scaler** between values 0 and 1 as shown above. We will apply this scaling to the following feature columns:
 
@@ -174,20 +174,20 @@ From Data Wrangler's list of pre-built transforms, choose **Process numeric** an
 
 
 Handle categorical data
- ![scale-categorical](.././img/scale-categorical.png)
+ ![scale-categorical](./img/scale-categorical.png)
 `meal`, `is_repeated_guest`, `market_segment`, `assigned_room_type`, `deposit_type`, `customer_type`
 
 ### Balancing the target variable 
 
 `is_canceled` = 0 (negative case)
 `is_canceled` = 1 (positive case)
-![random-oversample](.././img/random-oversample.png)
+![random-oversample](./img/random-oversample.png)
 
 
 The ratio of positive to negative case around 0.38
 
-![quick-model-post](.././img/class-before-smote.png)
+![quick-model-post](./img/class-before-smote.png)
 
 Balance using under/over sampling or SMOTE 
 After balancing, the ratio is 1 
-![quick-model-post](.././img/class-after-smote.png)
+![quick-model-post](./img/class-after-smote.png)
