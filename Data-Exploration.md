@@ -1,8 +1,13 @@
-## Analyze and Visualize 
+## Exploratory Data Analysis 
+
+### Analyze and Visualize 
 
 Amazon SageMaker Data Wrangler includes built-in analyses that help you generate visualizations and data analyses in a few clicks. You can also create custom analyses using your own code.
 
-You add an analysis to a dataframe by selecting a step in your data flow, and then choosing Add analysis. To access an analysis you've created, select the step that contains the analysis, and select the analysis.
+For EDA, let's choose the Add Analysis option - this takes us to the analysis page (see below) where we are provided with a list of various analysis types to choose and apply.
+
+
+To access an analysis you've created, select the step that contains the analysis, and select the analysis.
 
 Before we transform our raw features to make it ML ready for model building, lets analyze and visualize the booking cancellations dataset to detect features that are important to our problem and ones that are not. 
 
