@@ -120,6 +120,8 @@ Lasso feature selection trains a linear classifier with L1 regularization (you c
 
 To create the analysis for Lasso Feature Selection, choose **Multicollinearity** for Analysis type and choose **Lasso feature selection** for Analysis
 
+![non-linear-correlated](./img/lasso-pre-fields.png)
+
 The plot below provides features' importance scores (absolute coefficients) after training a classifier on a sample of the dataset (10k for large dataset). The training process includes a standardization of the features to have mean 0 and standard deviation 1 in order to avoid a skewed importance score due to different scales.
  
 The classifier obtained a roc_auc score: `0.639269142214666`.
