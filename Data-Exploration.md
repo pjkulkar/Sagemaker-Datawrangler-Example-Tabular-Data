@@ -124,7 +124,7 @@ The plot below provides features' importance scores (absolute coefficients) afte
  
 The classifier obtained a roc_auc score: `0.639269142214666`.
 
-![lasso-pre](.././img/lasso-pre.png)
+![lasso-pre](./img/lasso-pre.png)
 
 
 ### Detect Duplicate Rows
