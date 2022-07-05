@@ -123,7 +123,7 @@ Further, based on the multi-colinearity analysis results, we can also drop the c
 To drop the duplicate rows that we identified based on the analysis we did in the previous section. Choose **Drop duplicates** transform from the list of transforms available in Data Wrangler as shown in the figure below.
 
  ![drop-duplicates](/img/drop-duplicates.png)
- ![duplicate-1](/img/duplicate-1.png)
+
  
  
 ### Handle Outliers 
