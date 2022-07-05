@@ -61,7 +61,7 @@ Numeric to numeric correlation is in the range [-1, 1] where 0 implies no correl
 
 Based on the correlation values, we can see the top 6 feature pairs (as listed below) are strongly correlating with one another. Also, some of these features also showed up in the target analysis we did previously.
 
-![linear-pre](./img/linear-strongly-correlated.png)
+![linear-correlated](./img/linear-strongly-correlated.png)
 
 P.S.: A limit of 100,000 rows is used for this analysis.
 
