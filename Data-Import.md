@@ -27,6 +27,5 @@ Following steps outline how to import data into Sagemaker to be consumed by Data
 ![image](./img/image-5.png)
 7. Data Wrangler will show you a preview of the data. Select the CSV file from the drop down results. On the right pane, make sure COMMA is chosen as the delimiter and Sampling is *None*. Our data set is small enough to run Data Wrangler transformations on the full data set. If you have a large data set, consider using sampling. Finally select *Import* to import this dataset to Data Wrangler.
 ![image](./img/image-6.png)
-8. Once the dataset is imported, the Data flow interface looks as shown below.
+8. Once the dataset is imported, Data Wrangler automatically validates the dataset and detects the data types. The flow editor now shows 2 blocks showcasing that the data was imported from a source and data types recognized. You are also allowed to edit the data types if needed.
 ![image](./img/image-7.png)
-9. Since currently you are in the data flow tab, hit the import tab (left of data flow tab) as seen in the above image.
