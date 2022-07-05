@@ -114,19 +114,16 @@ Data Wrangler includes built-in transforms, which you can use to transform colum
  
  ![drop-columns](/img/drop-columns.png)
  
-we had already dropped it since it was also a target leakage 
+Further, based on the multi-colinearity analysis results, we can also drop the columns adults and agents for whom the variance inflation factor scores are greater than 5.
 
-
-based on multi-colinearity results 
-
-VIF > 5
-drop columns `adults`, `agents`
 
  ![drop-more-columns](/img/drop-more-columns.png)
 
-### Drop duplicate columns 
- ![drop-duplicates](.././img/drop-duplicates.png)
- ![duplicate-1](.././img/duplicate-1.png)
+### Drop duplicate Rows
+To drop the duplicate rows that we identified based on the analysis we did in the previous section. Choose **Drop duplicates** transform from the list of transforms available in Data Wrangler as shown in the figure below.
+
+ ![drop-duplicates](/img/drop-duplicates.png)
+ ![duplicate-1](/img/duplicate-1.png)
  
  
 ### handle outliers 
