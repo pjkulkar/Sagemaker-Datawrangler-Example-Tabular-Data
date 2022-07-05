@@ -114,7 +114,7 @@ Data Wrangler includes built-in transforms, which you can use to transform colum
  
  ![drop-columns](/img/drop-columns.png)
  
-Further, based on the multi-colinearity analysis results, we can also drop the columns adults and agents for whom the variance inflation factor scores are greater than 5.
+Further, based on the multi-colinearity analysis results, we can also drop the columns 'adults' and 'agents' for whom the variance inflation factor scores are greater than 5.
 
 
  ![drop-more-columns](/img/drop-more-columns.png)
