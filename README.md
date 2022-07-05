@@ -117,7 +117,7 @@ Data Wrangler includes built-in transforms, which you can use to transform colum
 Further, based on the multi-colinearity analysis results, we can also drop the columns `adults` and `agent` for whom the variance inflation factor scores are greater than 5.
 
 
- ![drop-more-columns](/img/drop-more-columns.png)
+ ![drop-more-columns](/img/drop-more-cols.png)
 
 #### Drop Duplicate Rows
 To drop the duplicate rows that we identified based on the analysis we did in the previous section. Choose **Drop duplicates** transform from the list of transforms available in Data Wrangler as shown in the figure below.
@@ -127,6 +127,8 @@ To drop the duplicate rows that we identified based on the analysis we did in th
  
  
 ### Handle Outliers 
+An outlier can cause serious problems in statistical analysis. Machine learning models are sensitive to the distribution and range of feature values. Outliers, or rare values, can negatively impact model accuracy and lead to longer training times. When you define a Handle outliers transform step, the statistics used to detect outliers are generated on the data available in Data Wrangler when defining this step. These same statistics are used when running a Data Wrangler job.
+
  ![duplicate-1](.././img/outliers.png)
 
 
