@@ -6,6 +6,7 @@ Amazon SageMaker Data Wrangler includes built-in analyses that help you generate
 
 For EDA, let's choose the Add Analysis option - this takes us to the analysis page (see below) where we are provided with a list of various analysis types to choose and apply.
 
+![image](./img/image-9.png)
 
 To access an analysis you've created, select the step that contains the analysis, and select the analysis.
 
@@ -22,7 +23,10 @@ You can add the following analysis to a dataframe:
 * A custom visualization using your own code.
 
 
+Following sections showcase few of the analysis techniques for the Hotel-bookings data.
+
 ### Target Leakage 
+
 Target leakage occurs when there is data in a machine learning training dataset that is strongly correlated with the target label, but is not available in real-world data. For example, you may have a column in your dataset that serves as a proxy for the column you want to predict with your model.
 
 When you use the Target Leakage analysis, you specify the following:
@@ -34,11 +38,16 @@ For classification, the target leakage analysis uses the area under the receiver
 
 The AUC - ROC curve provides a predictive metric, computed individually for each column using cross-validation, on a sample of up to around 1000 rows. A score of 1 indicates perfect predictive abilities, which often indicates target leakage. A score of 0.5 or lower indicates that the information on the column could not provide, on its own, any useful information towards predicting the target. Although it can happen that a column is uninformative on its own but is useful in predicting the target when used in tandem with other features, a low score could indicate the feature is redundant.
 
+To create a target leakage analysis, use the following configuration (as shown in the figure below). 
+![image](./img/image-10.png)
+
+
 For our example dataset, the image below shows a target leakage report for a hotel booking cancellation problem, that is, predicting if a person will cancel his hotel reservation or not. An AUC - ROC curve is used to calculate the predictive ability of 31 raw features, out of which `reservation_status` was determined to a target leakage. Also, features - `arrival_day_of_month`, `babies`, `reservation_status_date`, `arrival_date_month`, `reserved_room_type`, `hotel` and `days_in_waiting_list` were identified as redundant.
 
 The identified features can be fairly omitted as part of the transformations we will apply post this initial analysis.
 
-![target-leakage](.././img/target-leakage.png)
+![target-leakage](./img/image-11.png)
+
 
 Next, with SageMaker Data Wrangler’s feature correlation visualization you can easily calculate the correlation of features in your data set and visualize them as a correlation matrix. We will look into 2 types of feature correlations and how to use them on our example dataset in hand.
 
