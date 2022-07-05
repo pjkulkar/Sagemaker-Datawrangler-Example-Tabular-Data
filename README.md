@@ -159,7 +159,11 @@ Normalization is a scaling technique in which values are shifted and rescaled so
  
 For our example use case, let's normalize the numeric feature columns to a standard scale [0,1]. scale-numeric
 
-From Data Wrangler's list of pre-built transforms, choose **Process numeric** and apply the **min-max scaler** between values 0 and 1 as shown above. We will apply this scaling to the following feature columns:
+From Data Wrangler's list of pre-built transforms, choose **Process numeric** and apply the **min-max scaler** between values 0 and 1 as shown above.
+
+ ![scale-numeric](./img/scale-numeric.png)
+
+We will need to apply this scaling to the following feature columns:
 
     lead_time
     stays_weekend_nights
@@ -171,12 +175,21 @@ From Data Wrangler's list of pre-built transforms, choose **Process numeric** an
     adr
     total_of_specical_requests
     required_car_parking_spaces
+    
+    
+#### Handle Categorical Data
 
+Categorical data is usually composed of a finite number of categories, where each category is represented with a string. Encoding categorical data is the process of creating a numerical representation for categories. With Data Wrangler, we can select Ordinal encode to encode categories into an integer between 0 and the total number of categories in the Input column you select. Select One-hot encode for Transform to use one-hot encoding or use similarity encoding when you have the following:
 
- ![scale-numeric](./img/scale-numeric.png)
+    - A large number of categorical variables
+    - Noisy data
 
-Handle categorical data
+One-hot transform can be applied to our dataset as shown in the figure below.
+
  ![scale-categorical](./img/scale-categorical.png)
+
+One hot encoding can be applied to the following 6 categorical columns. 
+
 `meal`, `is_repeated_guest`, `market_segment`, `assigned_room_type`, `deposit_type`, `customer_type`
 
 ### Balancing the target variable 
