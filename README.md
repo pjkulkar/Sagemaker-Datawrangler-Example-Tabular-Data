@@ -119,28 +119,32 @@ Further, based on the multi-colinearity analysis results, we can also drop the c
 
  ![drop-more-columns](/img/drop-more-columns.png)
 
-### Drop duplicate Rows
+#### Drop Duplicate Rows
 To drop the duplicate rows that we identified based on the analysis we did in the previous section. Choose **Drop duplicates** transform from the list of transforms available in Data Wrangler as shown in the figure below.
 
  ![drop-duplicates](/img/drop-duplicates.png)
  ![duplicate-1](/img/duplicate-1.png)
  
  
-### handle outliers 
+### Handle Outliers 
  ![duplicate-1](.././img/outliers.png)
 
 
-### Handle missing values 
+### Handle Missing Values 
+We can do the following to handle missing values in our feature columns using Data Wrangler. 
 
-children replace with 0 based on value counts 
+ - Missing values in **Children** column : Majority of the visitors were not accompanied by children and hence missing data can be replaced by number of children = 0.
+ 
 ![fill-missing-children](.././img/fill-missing-children.png)
  
+- Missing values in **Country** column 
+Iterating through the country column reveals that most of the clients are from Europe. Therefore, all the missing values in the country column are replaced with the country of maximum occurrence - Portugal (PRT). Fill missing country column with `PRT` based on value counts 
  
-Fill missing country column with `PRT` based on value counts 
 ![fill-missing-country](.././img/fill-missing-country.png)
 
 
-Custom Transform - Meal type has Undefined category, changing the Undefined value to the most used which is BB by implementing a custom pyspark transform with two simple lines of code
+- Custom Transform - Meal type has Undefined category, changing the Undefined value to the most used which is BB by implementing a custom pyspark transform with two simple lines of code
+ 
  ![custom-pyspark](.././img/custom-pyspark.png)
 ```python
 from pyspark.sql.functions import when
@@ -148,10 +152,23 @@ from pyspark.sql.functions import when
 df = df.withColumn('meal', when(df.meal == 'Undefined', 'BB').otherwise(df.meal))
 ```
 
+ #### Numeric Normalization 
 Standardize numeric outliers 
  ![scale-numeric](.././img/scale-numeric.png)
 
-`lead_time`, `stays_weekend_nights`, `stays_weekend_nights`, `is_repeated_guest`, `prev_cancellations`, `prev_bookings_not_canceled`, `booking_changes`, `adr`, `total_of_specical_requests`, `required_car_parking_spaces`
+From Data Wrangler's list of pre-built transforms, choose **Process numeric** and apply the **min-max scaler** between values 0 and 1 as shown above. We will apply this scaling to the following feature columns:
+
+    lead_time
+    stays_weekend_nights
+    stays_weekend_nights
+    is_repeated_guest
+    prev_cancellations
+    prev_bookings_not_canceled
+    booking_changes
+    adr
+    total_of_specical_requests
+    required_car_parking_spaces
+
 
 
 Handle categorical data
