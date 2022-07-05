@@ -55,7 +55,10 @@ Next, with SageMaker Data Wrangler’s feature correlation visualization you can
 
 Linear feature correlation is based on Pearson's correlation. Numeric to categorical correlation is calculated by encoding the categorical features as the floating point numbers that best predict the numeric feature before calculating Pearson's correlation. Linear categorical to categorical correlation is not supported.
 
-Numeric to numeric correlation is in the range [-1, 1] where 0 implies no correlation, 1 implies perfect correlation and -1 implies perfect inverse correlation. Numeric to categorical and categorical to categrical correlations are in the range [0, 1] where 0 implies no correlation and 1 implies perfect correlation. Features that are not either numeric or categorical are ignored. The table below lists for each feature what is the most correlated feature to it. 
+Numeric to numeric correlation is in the range [-1, 1] where 0 implies no correlation, 1 implies perfect correlation and -1 implies perfect inverse correlation. Numeric to categorical and categorical to categrical correlations are in the range [0, 1] where 0 implies no correlation and 1 implies perfect correlation. 
+To create the analysis, choose **Feature Correlation** for the Analysis type and choose **linear** for Correlation type as shown below. 
+
+Features that are not either numeric or categorical are ignored. The table below lists for each feature what is the most correlated feature to it. 
 
 ![linear-pre](./img/linear-pre.png)
 
@@ -74,6 +77,8 @@ Numeric to numeric correlation is in the range [-1, 1] where 0 implies no correl
 
 Features that are not either numeric or categorical are ignored.
 
+To create the analysis, choose **Feature Correlation** for the Analysis type and **non-linear** for Correlation type. 
+
 The table below lists for each feature what is the most correlated feature to it. You can see most of the top correlated feature pairs overlap with the previous two analyses.
     
 ![non-linear-correlated](./img/non-linear-pre.png)
@@ -82,6 +87,8 @@ The table below lists for each feature what is the most correlated feature to it
 ### Multicolinearity (Variance Inflation Factors)
 
 Variance Inflation Factor (VIF) is a measure of colinearity among variables. It is calculated by solving a regression problem to predict one variable given the rest. A VIF score is a positive number that is greater or equal than 1, and a score of 1 means the variable is completely independent of the others. The larger the score, the more dependent it is. Since it is an inverse, it is possible for the VIF score to be infinite. Note that we cap the VIF score at 50. As a rule of thumb for cases where the number of samples is not abnormally small, a score of up to 5 means the variable is only moderatly correlated, and beyond 5 it is highly correlated.
+
+To create the analysis for VIF, choose **Multicollinearity** for Analysis type and choose **Variance inflation factors** for Analysis.
 
 As per the above rule, we can eliminate the following feature columns from our feature set since they will not contribute effectively towards the prediction capability of the model that gets trained using these features.
 
@@ -97,6 +104,8 @@ As per the above rule, we can eliminate the following feature columns from our f
 
 Principal Component Analysis (PCA) measures the variance of the data along different directions in the feature space. The ordered list of variances, also known as the singular values, can inform about multicolinearity in our data. This list contains non-negative numbers. When the numbers are roughly uniform, the data has very few multicolinearities. However, when the opposite is true, the magnitude of the top values will dominate the rest. In order to avoid issues related to different scales, the individual features are standardized to have mean 0 and standard deviation 1 before applying PCA.
 
+To create the analysis for PCA, choose **Multicollinearity** for Analysis type and choose **Principal component analysis** for Analysis.
+
 As per the above rule, it is evident the numbers (variances) are not uniform hence confirming that the data has multicolinearies to fix. This has already been confirmed by our previous analysis.
 
 
@@ -109,6 +118,8 @@ As per the above rule, it is evident the numbers (variances) are not uniform hen
 
 Lasso feature selection trains a linear classifier with L1 regularization (you can control the strength of L1 penalty by adjusting "L1 magnitude") that induces a sparse solution. The regressor provides a coefficient for each feature, and the absolute value of this coefficient could be interpreted as an importance score for that feature.
 
+To create the analysis for Lasso Feature Selection, choose **Multicollinearity** for Analysis type and choose **Lasso feature selection** for Analysis
+
 The plot below provides features' importance scores (absolute coefficients) after training a classifier on a sample of the dataset (10k for large dataset). The training process includes a standardization of the features to have mean 0 and standard deviation 1 in order to avoid a skewed importance score due to different scales.
  
 The classifier obtained a roc_auc score: `0.639269142214666`.
@@ -117,8 +128,11 @@ The classifier obtained a roc_auc score: `0.639269142214666`.
 
 
 ### Detect Duplicate Rows
-Next, with the new duplicate row detection visualization, you can quickly detect if your data set has any duplicate rows. We can see almost ~28% of the rows in the dataset are duplicates. 
+Next, with the new duplicate row detection visualization, you can quickly detect if your data set has any duplicate rows. 
 
+To apply this analysis, choose **Duplicate rows** for Analysis type. 
+
+We can see almost ~28% of the rows in the dataset are duplicates. 
 ![duplicate](./img/duplicate-2.png)
 
 
