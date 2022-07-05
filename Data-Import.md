@@ -29,3 +29,6 @@ Following steps outline how to import data into Sagemaker to be consumed by Data
 ![image](./img/image-6.png)
 8. Once the dataset is imported, Data Wrangler automatically validates the dataset and detects the data types. The flow editor now shows 2 blocks showcasing that the data was imported from a source and data types recognized. You are also allowed to edit the data types if needed.
 ![image](./img/image-7.png)
+In order to apply an action on the imported data, we can select on the data types block and right click on the block. As depicted in the figure below, you can see options to add a transform, perform an analysis, add a destination sink or export the steps as Jupyter notebook. You can also join and concatenate on the imported dataset with other datasets.
+![image](./img/image-8.png)
+As a next step, we will explore the data that we uploaded. Please refer to the next section for steps. 
