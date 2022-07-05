@@ -8,8 +8,8 @@ Following steps outline how to import data into Sagemaker to be consumed by Data
     - <details>
            <summary>Option 1</summary>
            <p> Use the Sage Maker Launcher screen as depicted here:
-                ![image](./img/image-1.png)
            </p>
+                    ![image](./img/image-1.png)
     </details>
 
     -  Opt1.- There are three ways that you can do this, 
