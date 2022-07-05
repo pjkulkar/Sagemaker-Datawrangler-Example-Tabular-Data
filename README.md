@@ -155,8 +155,9 @@ df = df.withColumn('meal', when(df.meal == 'Undefined', 'BB').otherwise(df.meal)
 ```
 
  #### Numeric Normalization 
-Standardize numeric outliers 
- ![scale-numeric](./img/scale-numeric.png)
+Normalization is a scaling technique in which values are shifted and rescaled so that they end up ranging between 0 and 1. It is also known as Min-Max scaling. Standardization is another scaling technique where the values are centered around the mean with a unit standard deviation. This means that the mean of the attribute becomes zero and the resultant distribution has a unit standard deviation.
+ 
+For our example use case, let's normalize the numeric feature columns to a standard scale [0,1]. scale-numeric
 
 From Data Wrangler's list of pre-built transforms, choose **Process numeric** and apply the **min-max scaler** between values 0 and 1 as shown above. We will apply this scaling to the following feature columns:
 
@@ -172,6 +173,7 @@ From Data Wrangler's list of pre-built transforms, choose **Process numeric** an
     required_car_parking_spaces
 
 
+ ![scale-numeric](./img/scale-numeric.png)
 
 Handle categorical data
  ![scale-categorical](./img/scale-categorical.png)
