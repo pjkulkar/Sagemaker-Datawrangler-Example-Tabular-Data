@@ -129,7 +129,7 @@ To drop the duplicate rows that we identified based on the analysis we did in th
 ### Handle Outliers 
 An outlier can cause serious problems in statistical analysis. Machine learning models are sensitive to the distribution and range of feature values. Outliers, or rare values, can negatively impact model accuracy and lead to longer training times. When you define a Handle outliers transform step, the statistics used to detect outliers are generated on the data available in Data Wrangler when defining this step. These same statistics are used when running a Data Wrangler job.
 
- ![duplicate-1](.././img/outliers.png)
+ ![outliers](./img/outliers.png)
 
 
 ### Handle Missing Values 
