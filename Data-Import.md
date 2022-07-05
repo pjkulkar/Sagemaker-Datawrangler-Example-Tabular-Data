@@ -3,20 +3,18 @@
 Following steps outline how to import data into Sagemaker to be consumed by Data Wrangler
 
 
-* Steps to import data  
+<b>Steps to import data</b></br></br>  
 1. Initialize SageMaker Data Wrangler via SageMaker Studio UI. You can use any one of the options specified below. 
-    - <details>
-           <summary>Option 1</summary>
-           <p> Use the Sage Maker Launcher screen as depicted here:
-           </p>
-                    ![image](./img/image-1.png)
-    </details>
+   
 
-    -  Opt1.- There are three ways that you can do this, 
-    -  Opt 2 -  You can use the SageMaker resources menu on the left, selecting Data Wrangler, and new flow
+
+    -  <b>Option 1.</b> </br> Use the Sage Maker Launcher screen as depicted here:
+    ![image](./img/image-1.png)
+
+    -  <b>Option 2.</b> </br>  You can use the SageMaker resources menu on the left, selecting Data Wrangler, and new flow
     ![image](./img/image-1-1.png)
     ![image](./img/image-1-2.png)
-    -  Opt 3 - You can also use the File -> New -> DataWrangler option as shown here
+    -  <b>Option 3.</b> </br> You can also use the File -> New -> DataWrangler option as shown here
     ![image](./img/image-1-3.png)
 2. Data Wrangler takes a few minutes to load.
 ![image](./img/image-2.png)
