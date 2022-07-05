@@ -105,11 +105,12 @@ Data Wrangler includes built-in transforms, which you can use to transform colum
 
 - redundant columns : drop columns that are redundant - `days_in_waiting_list`, `hotel`, `reserved_room_type`, `arrival_date_month`, `reservation_status_date`, `babies` and `arrival_date_day_of_month`
 
-- based on linear correlation results : drop columns `arrival_date_week_number`, `arrival_date_year` as it is greater than the recommended threshold of `0.90`
+- based on linear correlation results : drop columns `arrival_date_week_number`, `arrival_date_year` as correlation values for these feature (column) pairs are greater than the recommended threshold of 0.90. 
+
+- based on non-linear correlation results: drop `reservation_status`. This column was already marked to be dropped based on Target leakage analysis. 
  
-- based on non-linear correlation results: drop `reservation_status`
+ we can drop all these columns in one go. To drop columns, we can choose the Drop column transform and pick the column names we want to drop as show in the image below.
  
- we can drop all these columns in one go.
  
  ![drop-columns](/img/drop-columns.png)
  
