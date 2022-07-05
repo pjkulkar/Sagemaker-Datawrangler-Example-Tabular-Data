@@ -39,14 +39,14 @@ For classification, the target leakage analysis uses the area under the receiver
 The AUC - ROC curve provides a predictive metric, computed individually for each column using cross-validation, on a sample of up to around 1000 rows. A score of 1 indicates perfect predictive abilities, which often indicates target leakage. A score of 0.5 or lower indicates that the information on the column could not provide, on its own, any useful information towards predicting the target. Although it can happen that a column is uninformative on its own but is useful in predicting the target when used in tandem with other features, a low score could indicate the feature is redundant.
 
 To create a target leakage analysis, use the following configuration (as shown in the figure below). 
-![image](./img/image-10.png)
+![image](./img/target-leakage-pre.png)
 
 
 For our example dataset, the image below shows a target leakage report for a hotel booking cancellation problem, that is, predicting if a person will cancel his hotel reservation or not. An AUC - ROC curve is used to calculate the predictive ability of 31 raw features, out of which `reservation_status` was determined to a target leakage. Also, features - `arrival_day_of_month`, `babies`, `reservation_status_date`, `arrival_date_month`, `reserved_room_type`, `hotel` and `days_in_waiting_list` were identified as redundant.
 
 The identified features can be fairly omitted as part of the transformations we will apply post this initial analysis.
 
-![target-leakage](./img/image-11.png)
+![target-leakage](./img/target-leakage.png)
 
 
 Next, with SageMaker Data Wrangler’s feature correlation visualization you can easily calculate the correlation of features in your data set and visualize them as a correlation matrix. We will look into 2 types of feature correlations and how to use them on our example dataset in hand.
@@ -57,11 +57,11 @@ Linear feature correlation is based on Pearson's correlation. Numeric to categor
 
 Numeric to numeric correlation is in the range [-1, 1] where 0 implies no correlation, 1 implies perfect correlation and -1 implies perfect inverse correlation. Numeric to categorical and categorical to categrical correlations are in the range [0, 1] where 0 implies no correlation and 1 implies perfect correlation. Features that are not either numeric or categorical are ignored. The table below lists for each feature what is the most correlated feature to it. 
 
-![linear-pre](.././img/linear-pre.png)
+![linear-pre](./img/linear-pre.png)
 
 Based on the correlation values, we can see the top 6 feature pairs (as listed below) are strongly correlating with one another. Also, some of these features also showed up in the target analysis we did previously.
 
-![linear-pre](.././img/linear-strongly-correlated.png)
+![linear-pre](./img/linear-strongly-correlated.png)
 
 P.S.: A limit of 100,000 rows is used for this analysis.
 
@@ -76,7 +76,7 @@ Features that are not either numeric or categorical are ignored.
 
 The table below lists for each feature what is the most correlated feature to it. You can see most of the top correlated feature pairs overlap with the previous two analyses.
     
-![non-linear-pre](.././img/non-linear-pre.png)
+![non-linear-pre](./img/non-linear-pre.png)
 
 
 ### Multicolinearity (Variance Inflation Factors)
@@ -90,7 +90,7 @@ As per the above rule, we can eliminate the following feature columns from our f
 * `arrival_date_week_number`
 * `stays_in_week_nights`
 
-![variance-inflation-factors-pre](.././img/variance-inflation-factors-pre.png)
+![variance-inflation-factors-pre](./img/variance-inflation-factors-pre.png)
 
 
 ### Multicolinearity - Principal Component Analysis (PCA)
@@ -101,7 +101,7 @@ As per the above rule, it is evident the numbers (variances) are not uniform hen
 
 
 
-![pca-pre](.././img/pca-pre.png)
+![pca-pre](./img/pca-pre.png)
 
 
 ### Multicolinearity Lasso Feature Selection 
@@ -119,7 +119,7 @@ The classifier obtained a roc_auc score: `0.639269142214666`.
 ### Detect Duplicate Rows
 Next, with the new duplicate row detection visualization, you can quickly detect if your data set has any duplicate rows. We can see almost ~28% of the rows in the dataset are duplicates. 
 
-![duplicate](.././img/duplicate-2.png)
+![duplicate](./img/duplicate-2.png)
 
 
 ### Quick Model
@@ -142,6 +142,6 @@ A limit of 100,000 rows is used for this analysis. You can use the Quick Model f
 
 We can from the results below, Quick model was able to predict with an F1 score of 82% on the test set. But, this is misleading, given we haven't eliminated most of the feature columns that are a target leakage or redundant based on high colinearity. This is justified in the results below where the column `reservation_status` which is a target leakage ranked as the most important feature.
 
-![quick-model-pre](.././img/quick-model-pre.png)
+![quick-model-pre](./img/quick-model-pre.png)
 
 In the next section, we will apply some post analysis transformations to fix the data of the various colinearity and other issues and re-generate a quick model and compare the differences.
