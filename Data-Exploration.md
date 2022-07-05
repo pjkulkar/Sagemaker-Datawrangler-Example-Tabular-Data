@@ -76,7 +76,7 @@ Features that are not either numeric or categorical are ignored.
 
 The table below lists for each feature what is the most correlated feature to it. You can see most of the top correlated feature pairs overlap with the previous two analyses.
     
-![non-linear-pre](./img/non-linear-pre.png)
+![non-linear-correlated](./img/non-linear-pre.png)
 
 
 ### Multicolinearity (Variance Inflation Factors)
