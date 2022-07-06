@@ -237,4 +237,4 @@ The below figure shows the results of the newly run Quick Model created using th
 
 Craete a quick model, similar to one we created in the Data Exploration step. 
 
-![post-quick-model](./img/model-after-transform.png)
+![post-quick-model](./img/quick-model-post.png)
