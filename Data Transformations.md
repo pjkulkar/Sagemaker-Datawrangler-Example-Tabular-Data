@@ -20,24 +20,24 @@ Data Wrangler includes built-in transforms, which you can use to transform colum
  we can drop all these columns in one go. To drop columns, we can choose the **Drop column** transform and pick the column names we want to drop as show in the image below.
  
  
- ![drop-columns](.././img/drop-columns.png)
+ ![drop-columns](./img/drop-columns.png)
  
 Further, based on the multi-colinearity analysis results, we can also drop the columns `adults` and `agent` for whom the variance inflation factor scores are greater than 5.
 
 
- ![drop-more-columns](.././img/drop-more-cols.png)
+ ![drop-more-columns](./img/drop-more-cols.png)
 
 #### Drop Duplicate Rows
 To drop the duplicate rows that we identified based on the analysis we did in the previous section. Choose **Drop duplicates** transform from the list of transforms available in Data Wrangler as shown in the figure below.
 
- ![drop-duplicates](.././img/drop-duplicates.png)
+ ![drop-duplicates](./img/drop-duplicates.png)
 
  
  
 ### Handle Outliers 
 An outlier can cause serious problems in statistical analysis. Machine learning models are sensitive to the distribution and range of feature values. Outliers, or rare values, can negatively impact model accuracy and lead to longer training times. When you define a Handle outliers transform step, the statistics used to detect outliers are generated on the data available in Data Wrangler when defining this step. These same statistics are used when running a Data Wrangler job.
 
- ![outliers](.././img/outliers.png)
+ ![outliers](./img/outliers.png)
 
 
 ### Handle Missing Values 
@@ -45,17 +45,17 @@ We can do the following to handle missing values in our feature columns using Da
 
  - Missing values in **Children** column : Majority of the visitors were not accompanied by children and hence missing data can be replaced by number of children = 0.
  
-![fill-missing-children](.././img/fill-missing-children.png)
+![fill-missing-children](./img/fill-missing-children.png)
  
 - Missing values in **Country** column 
 Iterating through the country column reveals that most of the clients are from Europe. Therefore, all the missing values in the country column are replaced with the country of maximum occurrence - Portugal (PRT). Fill missing country column with `PRT` based on value counts 
  
-![fill-missing-country](.././img/fill-missing-country.png)
+![fill-missing-country](./img/fill-missing-country.png)
 
 
 - Custom Transform - Meal type has Undefined category, changing the Undefined value to the most used which is BB by implementing a custom pyspark transform with two simple lines of code
  
- ![custom-pyspark](.././img/custom-pyspark.png)
+ ![custom-pyspark](./img/custom-pyspark.png)
 ```python
 from pyspark.sql.functions import when
 
@@ -69,7 +69,7 @@ For our example use case, let's normalize the numeric feature columns to a stand
 
 From Data Wrangler's list of pre-built transforms, choose **Process numeric** and apply the **min-max scaler** between values 0 and 1 as shown above.
 
- ![scale-numeric](.././img/scale-numeric.png)
+ ![scale-numeric](./img/scale-numeric.png)
 
 We will need to apply this scaling to the following feature columns:
 
@@ -94,7 +94,7 @@ Categorical data is usually composed of a finite number of categories, where eac
 
 One-hot transform can be applied to our dataset as shown in the figure below.
 
- ![scale-categorical](.././img/categorical-one-hot.png)
+ ![scale-categorical](./img/categorical-one-hot.png)
 
 One hot encoding can be applied to the following 6 categorical columns. 
 
@@ -118,17 +118,17 @@ From the Data Wrangler's transform pane, choose Balance data as the group and ch
 `is_canceled` = 0 (negative case)
 `is_canceled` = 1 (positive case)
 
- ![random-oversample](.././img/random-oversample.png)
+ ![random-oversample](./img/random-oversample.png)
 
 The state of the classes before and after balancing is as follows:
 
 The ratio of positive to negative case = ~0.38 
 
-![pre-balance](.././img/class-before-balance.png)
+![pre-balance](./img/class-before-balance.png)
 
 
 After balancing, the ratio is 1 
-![post-balance](.././img/class-after-balance.png)
+![post-balance](./img/class-after-balance.png)
 
 #### Quick Model
 Given, we have applied most of the needed transformations on our feature columns, we can now create a Quick Model again using the transformed features to identify the predictive ability of our features and take a look at their attribution towards prediction.
@@ -145,4 +145,4 @@ The below figure shows the results of the newly run Quick Model created using th
 
 Craete a quick model, similar to one we created in the Data Exploration step. 
 
-![post-quick-model](.././img/quick-model-post.png)
+![post-quick-model](./img/quick-model-post.png)
