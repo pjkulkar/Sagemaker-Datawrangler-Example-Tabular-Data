@@ -26,6 +26,11 @@ You can add the following analysis to a dataframe:
 
 
 Following sections showcase few of the analysis techniques for the Hotel-bookings data.
+### Table Information 
+
+After selecting the Table informaiton analysis, overall details of the data for various columsn is displayed as depicted in figure below. 
+
+![image](./img/table-information.png)
 
 ### Target Leakage 
 
