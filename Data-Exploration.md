@@ -136,8 +136,8 @@ Next, with the new duplicate row detection visualization, you can quickly detect
 
 To apply this analysis, choose **Duplicate rows** for Analysis type. 
 
-We can see almost ~28% of the rows in the dataset are duplicates. 
-![duplicate](./img/duplicate-2.png)
+We can see almost ~36% of the rows in the dataset are duplicates. 
+![duplicate](./img/duplicate-rows.png)
 
 
 ### Quick Model
