@@ -194,6 +194,19 @@ One hot encoding can be applied to the following 6 categorical columns.
 
 ### Balancing the target variable 
 
+DataWrangler also helps to balance the target variable (column) for class imbalance. Let's presume the following for the negative and positive cases.
+
+    is_canceled = 0 (negative case)
+    is_canceled = 1 (positive case)
+
+In Data Wrangler, we can handle class imbalance using 3 different techniques.
+
+    - Random Undersample
+    - Random Oversample
+    - SMOTE
+
+From the Data Wrangler's transform pane, choose Balance data as the group and choose Random Oversample for the Transform field as shown in the picture below.
+
 `is_canceled` = 0 (negative case)
 `is_canceled` = 1 (positive case)
 ![random-oversample](./img/random-oversample.png)
