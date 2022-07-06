@@ -120,9 +120,9 @@ As per the above rule, it is evident the numbers (variances) are not uniform hen
 
 Lasso feature selection trains a linear classifier with L1 regularization (you can control the strength of L1 penalty by adjusting "L1 magnitude") that induces a sparse solution. The regressor provides a coefficient for each feature, and the absolute value of this coefficient could be interpreted as an importance score for that feature.
 
-To create the analysis for Lasso Feature Selection, choose **Multicollinearity** for Analysis type and choose **Lasso feature selection** for Analysis
+To create the analysis for Lasso Feature Selection, choose **Multicollinearity** for Analysis type and choose **Lasso feature selection** for Analysis. Select following parameters for the analysis -  `L1 Magnitude`: `1`,  `Problem Type`: `Classification`, `Label Column` : `is_cancelled` 
 
-![non-linear-correlated](./img/lasso-pre-fields.png)
+
 
 The plot below provides features' importance scores (absolute coefficients) after training a classifier on a sample of the dataset (10k for large dataset). The training process includes a standardization of the features to have mean 0 and standard deviation 1 in order to avoid a skewed importance score due to different scales.
  
