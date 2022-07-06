@@ -86,7 +86,7 @@ For this experiment the Data Source will be [Amazon S3](https://aws.amazon.com/s
 3.  Upload the data in step 1 to the bucket created in step 2. Steps to upload the data can be found [here] https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html
 4. Note the S3 URL for the file uploaded in Step 3 before moving to the next sextion. This data will be used as input to the Datawrangler during the data preprocessing.
 
-## Importing Datasets from a data source (S3) to Data Wrangler
+### Importing Datasets from a data source (S3) to Data Wrangler
 The hotel-bookings.csv file uploaded in rpevious section needs to be imported in Data Wrangler as input. Please refer to **[Importing Dataset from S3](/Data-Import.md)** and follow steps for importing the data.
 
 ### Exploring Data
