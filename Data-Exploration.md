@@ -2,15 +2,17 @@
 
 ### Analyze and Visualize 
 
-Amazon SageMaker Data Wrangler includes built-in analyses that help you generate visualizations and data analyses in a few clicks. You can also create custom analyses using your own code.
+Before we transform our raw features to make it ML ready for model building, lets analyze and visualize the booking cancellations dataset to detect features that are important to our problem and ones that are not. This can be achieved through Exploratory Data Analysis (EDA). Amazon SageMaker Data Wrangler includes built-in analyses that help you generate visualizations and data analyses in a few clicks. You can also create custom analyses using your own code.
 
-For EDA, let's choose the Add Analysis option - this takes us to the analysis page (see below) where we are provided with a list of various analysis types to choose and apply.
+In order to apply an action on the imported data, select the **Add Analysis** option on right clicking the the **Data Types** block. As depicted in the figure below, you can see options to add a transform, perform an analysis, add a destination sink or export the steps as Jupyter notebook. You can also join and concatenate on the imported dataset with other datasets.
 
-![image](./img/image-9.png)
+![image](./img/image-8.png)
 
-To access an analysis you've created, select the step that contains the analysis, and select the analysis.
+On selecting Add Analysis, the Analysis pane os shown, where you can choose the analysis you want to perform. 
 
-Before we transform our raw features to make it ML ready for model building, lets analyze and visualize the booking cancellations dataset to detect features that are important to our problem and ones that are not. 
+![image](./img/histogram.png)
+
+
 
 All analyses are generated using 100,000 rows of your dataset.
 
