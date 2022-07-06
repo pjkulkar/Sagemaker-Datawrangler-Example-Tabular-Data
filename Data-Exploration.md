@@ -132,11 +132,10 @@ The classifier obtained a roc_auc score: `0.639269142214666`.
 
 
 ### Detect Duplicate Rows
-Next, with the new duplicate row detection visualization, you can quickly detect if your data set has any duplicate rows. 
+Next, with the new duplicate row detection visualization, you can quickly detect if your data set has any duplicate rows. To apply this analysis, choose **Duplicate rows** for Analysis type. 
 
-To apply this analysis, choose **Duplicate rows** for Analysis type. 
+From the figure bwlow, we can see almost ~33% of the rows in the dataset are duplicates.
 
-We can see almost ~36% of the rows in the dataset are duplicates. 
 ![duplicate](./img/duplicate-rows.png)
 
 
