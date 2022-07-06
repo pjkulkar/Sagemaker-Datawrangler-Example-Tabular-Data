@@ -216,8 +216,21 @@ The state of the classes before and after balancing is as follows:
 
 The ratio of positive to negative case = ~0.38 
 
-![quick-model-post](./img/class-before-balance.png)
+![pre-balance](./img/class-before-balance.png)
 
 
 After balancing, the ratio is 1 
-![quick-model-post](./img/class-after-balance.png)
+![post-balance](./img/class-after-balance.png)
+
+#### Quick Model
+Given, we have applied most of the needed transformations on our feature columns, we can now create a Quick Model using the transformed features to identify the predictive ability of our features and take a look at their attribution towards prediction.
+
+It is a good practice to run a Quick Model everytime we make a set of feature transforms. Previously, we ran a Quick Model analysis using the raw features. The results of this previous run was mostly incorrect and misleading, given, we haven't fixed most of the correlation and other issues with our dataset.
+
+The below figure shows the results of the newly run Quick Model created using the transformed features. As you can see, the Quick Model achieved an F1 score of 62% on the test data. The top 5 most contributing features towards this score are as follows which is different from what we see previously.
+
+    lead_time
+    country
+    customer_type_Transient
+    required_car_parking_spaces
+    booking_changes
