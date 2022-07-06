@@ -216,8 +216,8 @@ The state of the classes before and after balancing is as follows:
 
 The ratio of positive to negative case = ~0.38 
 
-![quick-model-post](./img/class-before-smote.png)
+![quick-model-post](./img/class-before-balance.png)
 
 
 After balancing, the ratio is 1 
-![quick-model-post](./img/class-after-smote.png)
+![quick-model-post](./img/class-after-balance.png)
