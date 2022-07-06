@@ -87,7 +87,7 @@ We will need to apply this scaling to the following feature columns:
     
 #### Handle Categorical Data
 
-Categorical data is usually composed of a finite number of categories, where each category is represented with a string. Encoding categorical data is the process of creating a numerical representation for categories. With Data Wrangler, we can select Ordinal encode to encode categories into an integer between 0 and the total number of categories in the Input column you select. Select One-hot encode for Transform to use one-hot encoding or use similarity encoding when you have the following:
+Categorical data is usually composed of a finite number of categories, where each category is represented with a string. Encoding categorical data is the process of creating a numerical representation for categories. With Data Wrangler, we can select Ordinal encode to encode categories into an integer between 0 and the total number of categories in the Input column you select. Select **One-hot encode** option from **Encode Categories Transform** to use one-hot encoding or use similarity encoding when you have the following:
 
     - A large number of categorical variables
     - Noisy data
