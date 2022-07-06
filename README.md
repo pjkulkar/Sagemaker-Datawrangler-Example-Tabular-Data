@@ -212,11 +212,12 @@ From the Data Wrangler's transform pane, choose Balance data as the group and ch
 
  ![random-oversample](./img/random-oversample.png)
 
+The state of the classes before and after balancing is as follows:
 
-The ratio of positive to negative case around 0.38
+The ratio of positive to negative case = ~0.38 
 
 ![quick-model-post](./img/class-before-smote.png)
 
-Balance using under/over sampling or SMOTE 
+
 After balancing, the ratio is 1 
 ![quick-model-post](./img/class-after-smote.png)
