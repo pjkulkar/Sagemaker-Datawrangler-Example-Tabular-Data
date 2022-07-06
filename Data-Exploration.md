@@ -154,7 +154,7 @@ When you create a quick model chart, you select a dataset you want evaluated, an
 
 Let us create a prediction model on the fly for the problem for the booking cancellation problem using the raw crude features we started with in Data Wrangler's Quick Model option.
 
-![quick-model-pre](./img/create-quick-model-pre.png)
+![quick-model-pre](./img/create-quick-model.png)
 
 A limit of 100,000 rows is used for this analysis. You can use the Quick Model feature to provide a rough estimate of the expected predicted quality and the predictive power of the features in your dataset. 
 
