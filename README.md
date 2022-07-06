@@ -84,37 +84,37 @@ For this experiment the Data Source will be [Amazon S3](https://aws.amazon.com/s
 1. Download the [Hotel Booking Demand dataset](https://www.kaggle.com/jessemostipak/hotel-booking-demand) from the specified location. 
 2. Create a private S3 bucket to upload the dataset in. You can reference the instructions for bucket creaiton [here] https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html
 3.  Upload the data in step 1 to the bucket created in step 2. Steps to upload the data can be found [here] https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html
-4. Note the S3 URL for the file uploaded in Step 3 before moving to the next sextion. This data will be used as input to the Datawrangler during the data preprocessing.
+4. Note the S3 URL for the file uploaded in Step 3 before moving to the next sextion. This data will be used as input to the Datawrangler. The S3 URL will be used in the next step. 
 
 ### Importing Datasets from a data source (S3) to Data Wrangler
-The hotel-bookings.csv file uploaded in rpevious section needs to be imported in Data Wrangler as input. Please refer to **[Importing Dataset from S3](/Data-Import.md)** and follow steps for importing the data.
+The hotel-bookings.csv file uploaded in previous section needs to be imported in Data Wrangler as input. Please refer to **[Importing Dataset from S3](/Data-Import.md)** and follow steps for importing the data.
 
 ### Exploring Data
-Before applying various data transformations, we need to explore the data to find correlation and target leakage. Please refer to **[Exploratory Data Analysis](/Data-Exploration.md)** and follow steps for Data exploration.
+Before applying various data transformations, we need to explore the data to find correlations, duplicate rows as well as target leakage. Please refer to **[Exploratory Data Analysis](/Data-Exploration.md)** and follow steps for Data exploration.
 
 ### Data Transformation 
 Based on the Data explorations carried out in previous step, we are now ready to apply transformations to the data. Please refer to **[Data Transformations](/Data-Transformations.md)** and follow steps for Data Transformation.
 
 ### Data Export
-Data Wrangler UI can also be used to export the transformed data to Amazon S3. To get started with this process, first let's create a destination node. To create the destination node, right click on the final transform on your data and choose Add destination → Amazon S3. Assign a name for your output data and choose the S3 location where you want the data to be stored and click Add destination button at the bottom (as shown below).
+Data Wrangler UI can also be used to export the transformed data to Amazon S3. To get started with this process, first let's create a destination node. Right click on the final transform on your data and choose `Add destination` → `Amazon S3`. Assign a name for your output data and choose the S3 location where you want the data to be stored and click Add destination button at the bottom as shown below.
 
 ![add-destination](./img/add-destination.png)
 
-This creates a destination node (see below) to our data flow. The destination node acts as a sink to your data flow. 
+This adds a destination node to our data flow. The destination node acts as a sink to your data flow. 
 
 ![destination](./img/destination.png)
 
-Next, click on the Create job button in the upper right corner of the page. In this configuration page (shown below) for the SageMaker Processing job we are about to create, choose the Instance type and Instance count for our processing cluster. Assign tags if needed and choose the appropriate Volume Size and hit Run.
+Next, click on the Create job button in the upper right corner of the page. In the configuration page for the SageMaker Processing job we are about to create, choose the Instance type and Instance count for our processing cluster. Advance configuration is optional, where you can assign tags as needed and choose the appropriate Volume Size. Select `Run` to start the export job. 
 
 ![export-create-job](./img/create-job.png)
 
-By following the provided link, we can navigate to the monitoring page for SageMaker Processing job and track logs and metrics as shown in the figure below.
+The job created in the previous step will be available in the monitoring page for SageMaker Processing job as shown in the figure below.
 
 ![export-processing-job](./img/processing-job.png)
 
-The image below shows the completed job. Exported data should be available in the output S3 bucket. 
+After a certain time, the job will be complete. The image below shows the completed job. Exported data should be available in the output S3 bucket. 
 
 ![export-complete-job](./img/complete-job.png)
  
  
- The exported data can now be used for running the ML Models
+ This exported data can now be used for running the ML Models
