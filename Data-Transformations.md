@@ -17,7 +17,7 @@ Data Wrangler includes built-in transforms, which you can use to transform colum
 
 - based on non-linear correlation results: drop `reservation_status`. This column was already marked to be dropped based on Target leakage analysis. 
  
- we can drop all these columns in one go. To drop columns, we can choose the **Drop column** transform and pick the column names we want to drop as show in the image below.
+ we can drop all these columns in one go. To drop columns, we can choose the **Drop column** option from **Manage Columns** transform and pick the column names we want to drop as shown in the image below.
  
  
  ![drop-columns](./img/drop-columns.png)
