@@ -45,4 +45,4 @@ Following steps outline how to import data into Sagemaker to be consumed by Data
 ![image](./img/image-7.png)
 
 
-As a next step, we will explore the data that we uploaded. Please refer to the Exploratory Data Analysis section from Readme.md file. 
+As a next step, we will explore the data that we uploaded. Please refer to **[Exploratory Data Analysis](../Data-Exploration.md)** and follow steps for Data exploration.
