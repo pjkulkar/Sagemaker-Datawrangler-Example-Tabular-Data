@@ -44,8 +44,5 @@ Following steps outline how to import data into Sagemaker to be consumed by Data
 
 ![image](./img/image-7.png)
 
-9. In order to apply an action on the imported data, we can select on the data types block and right click on the block. As depicted in the figure below, you can see options to add a transform, perform an analysis, add a destination sink or export the steps as Jupyter notebook. You can also join and concatenate on the imported dataset with other datasets.
 
-![image](./img/image-8.png)
-
-As a next step, we will explore the data that we uploaded. Please refer to the next section for steps. 
+As a next step, we will explore the data that we uploaded. Please refer to the Exploratory Data Analysis section. 
