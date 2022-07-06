@@ -223,7 +223,7 @@ After balancing, the ratio is 1
 ![post-balance](./img/class-after-balance.png)
 
 #### Quick Model
-Given, we have applied most of the needed transformations on our feature columns, we can now create a Quick Model using the transformed features to identify the predictive ability of our features and take a look at their attribution towards prediction.
+Given, we have applied most of the needed transformations on our feature columns, we can now create a Quick Model again using the transformed features to identify the predictive ability of our features and take a look at their attribution towards prediction.
 
 It is a good practice to run a Quick Model everytime we make a set of feature transforms. Previously, we ran a Quick Model analysis using the raw features. The results of this previous run was mostly incorrect and misleading, given, we haven't fixed most of the correlation and other issues with our dataset.
 
@@ -234,3 +234,7 @@ The below figure shows the results of the newly run Quick Model created using th
     customer_type_Transient
     required_car_parking_spaces
     booking_changes
+
+Craete a quick model, similar to one we created in the Data Exploration step. 
+
+![post-quick-model](./img/model-after-transform.png)
