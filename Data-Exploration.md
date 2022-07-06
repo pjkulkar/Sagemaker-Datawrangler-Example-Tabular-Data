@@ -140,7 +140,7 @@ We can see almost ~28% of the rows in the dataset are duplicates.
 
 ### Quick Model
 
-Finally, let us create a quick model using the raw features to determine how good are our features and if this is something that is reliable, given we haven't dealt with the colinearlity issues with our dataset as yet based on previous analyses.
+We can create a quick model using the raw features to determine how good our features are, prior to applying transformations.
 
 Use the Quick Model visualization to quickly evaluate your data and produce importance scores for each feature. A feature importance score indicates how useful a feature is at predicting a target label. The feature importance score is between [0, 1] and a higher number indicates that the feature is more important to the whole dataset. On the top of the quick model chart, there is a model score. A classification problem shows an F1 score. A regression problem has a mean squared error (MSE) score.
 
