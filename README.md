@@ -186,7 +186,7 @@ Categorical data is usually composed of a finite number of categories, where eac
 
 One-hot transform can be applied to our dataset as shown in the figure below.
 
- ![scale-categorical](./img/scale-categorical.png)
+ ![scale-categorical](./img/categorical-one-hot.png)
 
 One hot encoding can be applied to the following 6 categorical columns. 
 
