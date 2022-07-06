@@ -165,4 +165,7 @@ We can from the results below, Quick model was able to predict with an F1 score 
 
 ![quick-model-pre](./img/quick-model-pre.png)
 
-In the next section, we will apply some post analysis transformations to fix the data of the various colinearity and other issues and re-generate a quick model and compare the differences.
+### Next Steps
+
+In the next section, we will apply post analysis transformations to fix the data of the various colinearity and other issues and re-generate a quick model and compare the differences. Please refer to **[Data Transformations](/Data-Transformations.md)** and follow steps for Data Transformation.
+
