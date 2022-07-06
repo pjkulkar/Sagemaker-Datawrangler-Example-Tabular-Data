@@ -115,3 +115,6 @@ By following the provided link, we can navigate to the monitoring page for SageM
 The image below shows the completed job. Exported data should be available in the output S3 bucket. 
 
 ![export-complete-job](./img/complete-job.png)
+ 
+ 
+ The exported data can now be used for running the ML Models
