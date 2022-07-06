@@ -112,7 +112,7 @@ Select `Run` to start the export job. The job created will have Job Name and Job
 
 ![export-create-job](./img/create-job.png)
 
-The job created in the previous step will be available in the monitoring page for SageMaker Processing job as shown in the figure below.
+The job created in the previous step will be available in the monitoring page for `SageMaker Processing job` as shown in the figure below.
 
 ![export-processing-job](./img/processing-job.png)
 
