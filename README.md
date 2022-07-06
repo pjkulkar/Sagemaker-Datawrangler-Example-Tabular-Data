@@ -104,7 +104,11 @@ This adds a destination node to our data flow. The destination node acts as a si
 
 ![destination](./img/destination.png)
 
-Next, click on the Create job button in the upper right corner of the page. In the configuration page for the SageMaker Processing job we are about to create, choose the Instance type and Instance count for our processing cluster. Advance configuration is optional, where you can assign tags as needed and choose the appropriate Volume Size. Select `Run` to start the export job. 
+Next, click on the Create job button in the upper right corner of the page. In the configuration page for the SageMaker Processing job we are about to create, choose the Instance type and Instance count for our processing cluster. Advance configuration is optional, where you can assign tags as needed and choose the appropriate Volume Size. 
+
+![export-create-job](./img/configure-job.png)
+
+Select `Run` to start the export job. The job created will have Job Name and Job ARN which can be used to search for the job status. 
 
 ![export-create-job](./img/create-job.png)
 
