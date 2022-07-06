@@ -99,7 +99,7 @@ As per the above rule, we can eliminate the following feature columns from our f
 * `arrival_date_week_number`
 * `stays_in_week_nights`
 
-![variance-inflation-factors-pre](./img/variance-inflation-factors-pre.png)
+![variance-inflation-factors](./img/vif-pre.png)
 
 
 ### Multicolinearity - Principal Component Analysis (PCA)
