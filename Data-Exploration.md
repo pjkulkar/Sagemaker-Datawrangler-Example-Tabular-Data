@@ -26,6 +26,18 @@ You can add the following analysis to a dataframe:
 
 
 Following sections showcase few of the analysis techniques for the Hotel-bookings data.
+
+### Get Insights
+
+You can get the Data Insights report by selecting Get Insights option for the Data Types box as shown in the figure.  
+
+![image](./img/get-insights.png)
+
+After the report is generated, it outlines findings about statistics, duplicate rows, warnings, confusion matrix and feature summary. This can be a useful report before we start our detailed analysis. 
+
+![image](./img/get-insights-report.png)
+
+
 ### Table Information 
 
 After selecting the Table informaiton analysis, overall details of the data for various columsn is displayed as depicted in figure below. 
@@ -171,5 +183,5 @@ We can from the results below, Quick model was able to predict with an F1 score 
 
 ### Next Steps
 
-In the next section, we will apply post analysis transformations to fix the data of the various colinearity and other issues and re-generate a quick model and compare the differences. Please refer to **[Data Transformations](/Data-Transformations.md)** and follow steps for Data Transformation.
+In the next section, we will apply post analysis transformations to fix the data of the various colinearity and other issues and re-generate a quick model and compare the differences. Please refer to **[Data Transformations](./Data-Transformations.md)** and follow steps for Data Transformation.
 
