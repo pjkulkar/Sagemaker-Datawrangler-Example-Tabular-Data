@@ -154,9 +154,12 @@ When you create a quick model chart, you select a dataset you want evaluated, an
 
 Let us create a prediction model on the fly for the problem for the booking cancellation problem using the raw crude features we started with in Data Wrangler's Quick Model option.
 
+![quick-model-pre](./img/create-quick-model-pre.png)
+
 A limit of 100,000 rows is used for this analysis. You can use the Quick Model feature to provide a rough estimate of the expected predicted quality and the predictive power of the features in your dataset. 
 
 We can from the results below, Quick model was able to predict with an F1 score of 82% on the test set. But, this is misleading, given we haven't eliminated most of the feature columns that are a target leakage or redundant based on high colinearity. This is justified in the results below where the column `reservation_status` which is a target leakage ranked as the most important feature.
+
 
 ![quick-model-pre](./img/quick-model-pre.png)
 
