@@ -6,7 +6,7 @@ Amazon SageMaker Data Wrangler provides numerous ML data transforms to streamlin
 
 Data Wrangler includes built-in transforms, which you can use to transform columns without any code. You can also add custom transformations using PySpark, Pandas, and PySpark SQL. Some transforms operate in place, while others create a new output column in your dataset.
 
-#### Drop Columns 
+### Drop Columns 
  Now we will drop columns based on the analyses we performed in the previous section. 
 
 -  based on target leakage : drop `reservation_status`
@@ -27,7 +27,7 @@ Further, based on the multi-colinearity analysis results, we can also drop the c
 
  ![drop-more-columns](./img/drop-more-cols.png)
 
-#### Drop Duplicate Rows
+### Drop Duplicate Rows
 To drop the duplicate rows that we identified based on the analysis we did in the previous section. Choose **Drop duplicates** transform from the list of transforms available in Data Wrangler as shown in the figure below.
 
  ![drop-duplicates](./img/drop-duplicates.png)
@@ -62,7 +62,7 @@ from pyspark.sql.functions import when
 df = df.withColumn('meal', when(df.meal == 'Undefined', 'BB').otherwise(df.meal))
 ```
 
- #### Numeric Normalization 
+ ### Numeric Normalization 
 Normalization is a scaling technique in which values are shifted and rescaled so that they end up ranging between 0 and 1. It is also known as Min-Max scaling. Standardization is another scaling technique where the values are centered around the mean with a unit standard deviation. This means that the mean of the attribute becomes zero and the resultant distribution has a unit standard deviation.
  
 For our example use case, let's normalize the numeric feature columns to a standard scale [0,1]. scale-numeric
@@ -85,7 +85,7 @@ We will need to apply this scaling to the following feature columns:
     required_car_parking_spaces
     
     
-#### Handle Categorical Data
+### Handle Categorical Data
 
 Categorical data is usually composed of a finite number of categories, where each category is represented with a string. Encoding categorical data is the process of creating a numerical representation for categories. With Data Wrangler, we can select Ordinal encode to encode categories into an integer between 0 and the total number of categories in the Input column you select. Select **One-hot encode** option from **Encode Categories Transform** to use one-hot encoding or use similarity encoding when you have the following:
 
@@ -130,7 +130,7 @@ The ratio of positive to negative case = ~0.38
 After balancing, the ratio is 1 
 ![post-balance](./img/class-after-balance.png)
 
-#### Quick Model
+### Quick Model
 Given, we have applied most of the needed transformations on our feature columns, we can now create a Quick Model again using the transformed features to identify the predictive ability of our features and take a look at their attribution towards prediction.
 
 It is a good practice to run a Quick Model everytime we make a set of feature transforms. Previously, we ran a Quick Model analysis using the raw features. The results of this previous run was mostly incorrect and misleading, given, we haven't fixed most of the correlation and other issues with our dataset.
