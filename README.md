@@ -201,15 +201,16 @@ DataWrangler also helps to balance the target variable (column) for class imbala
 
 In Data Wrangler, we can handle class imbalance using 3 different techniques.
 
-    - Random Undersample
-    - Random Oversample
-    - SMOTE
+    Random Undersample
+    Random Oversample
+    SMOTE
 
 From the Data Wrangler's transform pane, choose Balance data as the group and choose Random Oversample for the Transform field as shown in the picture below.
 
 `is_canceled` = 0 (negative case)
 `is_canceled` = 1 (positive case)
-![random-oversample](./img/random-oversample.png)
+
+ ![random-oversample](./img/random-oversample.png)
 
 
 The ratio of positive to negative case around 0.38
