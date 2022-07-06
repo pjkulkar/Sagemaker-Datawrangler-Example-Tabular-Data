@@ -112,6 +112,6 @@ By following the provided link, we can navigate to the monitoring page for SageM
 
 ![export-processing-job](./img/processing-job.png)
 
-The image below shows the completed job. 
+The image below shows the completed job. Exported data should be available in the output S3 bucket. 
 
 ![export-complete-job](./img/complete-job.png)
