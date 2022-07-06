@@ -98,7 +98,7 @@ Based on the Data explorations carried out in previous step, we are now ready to
 ### Data Export
 Data Wrangler UI can also be used to export the transformed data to Amazon S3. To get started with this process, first let's create a destination node. To create the destination node, right click on the final transform on your data and choose Add destination → Amazon S3. Assign a name for your output data and choose the S3 location where you want the data to be stored and click Add destination button at the bottom (as shown below).
 
-![add-destination](./img/add_destination.png)
+![add-destination](./img/add-destination.png)
 
 This creates a destination node (see below) to our data flow. The destination node acts as a sink to your data flow. 
 
