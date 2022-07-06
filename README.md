@@ -98,7 +98,7 @@ Based on the Data explorations carried out in previous step, we are now ready to
 ### Data Export
 Data Wrangler UI can also be used to export the transformed data to Amazon S3. To get started with this process, first let's create a destination node. To create the destination node, right click on the final transform on your data and choose Add destination → Amazon S3. Assign a name for your output data and choose the S3 location where you want the data to be stored and click Add destination button at the bottom (as shown below).
 
-![create-destination](./img/create_destination.png)
+![add-destination](./img/add_destination.png)
 
 This creates a destination node (see below) to our data flow. The destination node acts as a sink to your data flow. 
 
@@ -110,7 +110,7 @@ Next, click on the Create job button in the upper right corner of the page. In t
 
 By following the provided link, we can navigate to the monitoring page for SageMaker Processing job and track logs and metrics as shown in the figure below.
 
-![export-run-job](./img/run-job.png)
+![export-processing-job](./img/processing-job.png)
 
 The image below shows the completed job. 
 
